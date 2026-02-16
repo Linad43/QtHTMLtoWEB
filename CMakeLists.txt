@@ -50,12 +50,12 @@ set(CMAKE_AUTORCC ON)
 find_package(Qt5 REQUIRED COMPONENTS Core Widgets WebEngineWidgets)
 
 add_executable(QtHTMLtoWEB
-    main.cpp
+        main.cpp
 )
 
 target_link_libraries(QtHTMLtoWEB
-    PRIVATE
-    Qt5::Core
-    Qt5::Widgets
-    Qt5::WebEngineWidgets
+        PRIVATE
+        Qt5::Core
+        Qt5::Widgets
+        Qt5::WebEngineWidgets
 )

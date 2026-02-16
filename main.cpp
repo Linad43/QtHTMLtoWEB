@@ -4,8 +4,7 @@
 #include <QTextEdit>
 #include <QWebEngineView>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
 
     // Главное окно
@@ -14,11 +13,11 @@ int main(int argc, char *argv[])
     window.resize(1000, 600);
 
     // Layout
-    auto* layout = new QHBoxLayout(&window);
+    auto *layout = new QHBoxLayout(&window);
 
     // Виджеты
-    auto* editor = new QTextEdit();
-    auto* webView = new QWebEngineView();
+    auto *editor = new QTextEdit();
+    auto *webView = new QWebEngineView();
 
     // Добавляем в layout
     layout->addWidget(editor);
@@ -42,13 +41,12 @@ int main(int argc, char *argv[])
         "<p>Edit HTML on the left.</p>\n"
         "</body>\n"
         "</html>"
-        );
+    );
 
     // Обновление WebView при изменении текста
-    QObject::connect(editor, &QTextEdit::textChanged, [&]()
-                     {
-                         webView->setHtml(editor->toPlainText());
-                     });
+    QObject::connect(editor, &QTextEdit::textChanged, [&]() {
+        webView->setHtml(editor->toPlainText());
+    });
 
     // Первичная загрузка
     webView->setHtml(editor->toPlainText());
